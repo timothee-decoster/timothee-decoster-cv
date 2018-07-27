@@ -1,23 +1,27 @@
 <template>
-  <div id='nav' v-bind:class="{hide: hide}">
+  <div id='nav'>
+    <NavHeader/>
+    <hr/>
     <h1>{{ msg }}</h1>
+    <hr/>
+    <NavFooter/>
   </div>
 </template>
 
 <script>
+import NavHeader from './Nav-header';
+import NavFooter from './Nav-footer';
+
 export default {
     name: 'Nav',
+    components: {
+        NavHeader,
+        NavFooter
+    },
     data() {
         return {
-            msg: 'Side naviguation',
-            hide: false
+            msg: 'Side naviguation'
         };
-    },
-    mounted() {
-        this.$parent.$on('toggleNav', () => {
-            console.log('received');
-            this.hide = !this.hide;
-        });
     }
 };
 </script>
@@ -34,9 +38,6 @@ export default {
     font-weight: 400;
     font-size: 15px;
 }
-.hide {
-    display: none;
-}
 h1 {
     color: beige;
 }
@@ -49,12 +50,6 @@ h1 {
     #nav {
         width: 230px;
         left: -230px;
-    }
-    .nav-hidden {
-        overflow: hidden;
-    }
-    .sidebar-hidden #nav {
-        left: 0;
     }
 }
 </style>

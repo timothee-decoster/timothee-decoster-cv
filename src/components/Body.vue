@@ -1,8 +1,7 @@
 <template>
   <div id="body">
-    <div id="nav-toggle-div">
-        <button id="nav-toggle" @click="showNav()">{{ msg2 }}</button>
-    </div>
+    <Header/>
+    <hr/>
     <img src="../assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
@@ -43,19 +42,18 @@
 </template>
 
 <script>
+import Header from './Header';
+
 export default {
     name: 'Body',
+    components: {
+        Header
+    },
     data() {
         return {
             msg: 'Welcome to Your Vue.js App',
             msg2: 'Navigation'
         };
-    },
-    methods: {
-        showNav() {
-            console.log('send');
-            this.$parent.$emit('toggleNav');
-        }
     }
 };
 </script>
@@ -91,13 +89,6 @@ a {
     #body {
         margin-left: 0;
         width: 100%;
-    }
-    .sidebar-hidden {
-        overflow: hidden;
-    }
-    .sidebar-hidden #body {
-        margin-left: 230px;
-        overflow: hidden;
     }
 }
 </style>
