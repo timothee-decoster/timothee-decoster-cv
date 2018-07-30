@@ -80,6 +80,12 @@ li {
 a {
     color: #42b983;
 }
+hr {
+    height: 2px;
+    color: #333;
+    background-color: #333;
+    border: none;
+}
 @media only all and (max-width: 59.938em) {
     #body {
         margin-left: 230px;

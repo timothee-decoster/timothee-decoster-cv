@@ -70,3 +70,6 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Comm
+https://stackoverflow.com/questions/44004293/vue-js-and-sidebar-example

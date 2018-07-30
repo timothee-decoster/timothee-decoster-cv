@@ -1,25 +1,25 @@
 <template>
   <div id='header'>
+    <NavToggle/>
     <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
+import NavToggle from './Nav-toggle';
+
 export default {
-  name: "Header",
-  data() {
-    return {
-      msg: "Header"
-    };
-  }
+    name: 'Header',
+    components: {
+        NavToggle
+    },
+    data() {
+        return {
+            msg: 'Header'
+        };
+    }
 };
 </script>
 
 <style scoped>
-#header {
-  min-height: 30px;
-  max-height: 30px;
-  -webkit-box-orient: horizontal;
-  flex-direction: row;
-}
 </style>
