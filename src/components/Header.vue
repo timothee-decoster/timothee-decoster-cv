@@ -1,8 +1,18 @@
 <template>
-  <div id='header'>
-    <NavToggle/>
-    <h1>{{ msg }}</h1>
-  </div>
+    <!--<b-container fluid id='header'>
+        <b-row>
+            <b-col>
+                <NavToggle/>
+            </b-col>
+            <b-col>
+                <h1>{{ msg }}</h1>
+            </b-col>
+        </b-row>
+    </b-container>-->
+    <div id='header'>
+        <NavToggle/>
+        <h1>{{ msg }}</h1>
+    </div>
 </template>
 
 <script>
@@ -22,4 +32,9 @@ export default {
 </script>
 
 <style scoped>
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 </style>
