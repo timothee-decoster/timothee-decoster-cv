@@ -1,14 +1,4 @@
 <template>
-    <!--<b-container fluid id='header'>
-        <b-row>
-            <b-col>
-                <NavToggle/>
-            </b-col>
-            <b-col>
-                <h1>{{ msg }}</h1>
-            </b-col>
-        </b-row>
-    </b-container>-->
     <div id='header'>
         <NavToggle/>
         <h1>{{ msg }}</h1>
@@ -36,5 +26,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-height: 25px;
 }
 </style>
