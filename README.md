@@ -73,3 +73,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## Frog
 http://flexboxfroggy.com/#fr
+
+## Comm sidebar
+https://stackoverflow.com/questions/44004293/vue-js-and-sidebar-example

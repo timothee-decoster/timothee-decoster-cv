@@ -1,18 +1,12 @@
 <template>
     <div id='header'>
-        <NavToggle/>
         <h1>{{ msg }}</h1>
     </div>
 </template>
 
 <script>
-import NavToggle from './Nav-toggle';
-
 export default {
     name: 'Header',
-    components: {
-        NavToggle
-    },
     data() {
         return {
             msg: 'Header'
@@ -24,7 +18,7 @@ export default {
 <style scoped>
 #header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     max-height: 25px;
 }

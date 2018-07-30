@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Nav/>
+    <NavToggle/>
     <Body/>
   </div>
 </template>
@@ -8,12 +9,14 @@
 <script>
 import Nav from './components/Nav';
 import Body from './components/Body';
+import NavToggle from './components/Nav-toggle';
 
 export default {
     name: 'App',
     components: {
         Nav,
-        Body
+        Body,
+        NavToggle
     }
 };
 </script>

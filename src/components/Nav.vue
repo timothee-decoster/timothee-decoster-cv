@@ -35,8 +35,16 @@ export default {
     },
     data() {
         return {
-            msg: 'Side naviguation'
+            msg: 'Side naviguation',
+            hide: false
         };
+    },
+    mounted() {
+        this.$parent.$on('toggleNav', () => {
+            console.log('received');
+            console.log(`${this.hide} -> ${!this.hide}`)
+            this.hide = !this.hide;
+        });
     }
 };
 </script>
