@@ -58,8 +58,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hidden {
-    position: relative;
+.hidden,
+.visible {
+    position: inherit;
     margin-left: 300px;
 }
 h1,
@@ -84,7 +85,8 @@ hr {
     border: none;
 }
 @media only all and (max-width: 59.938em) {
-    .hidden, visible {
+    .hidden,
+    visible {
         margin-left: 230px;
     }
 }
