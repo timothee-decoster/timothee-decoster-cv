@@ -51,7 +51,9 @@ export default {
 
 <style scoped>
 #nav {
-    display: block;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
     background-color: #333;
     position: fixed;
     top: 0;
@@ -64,7 +66,7 @@ export default {
 #nav-section {
     position: relative;
     overflow: auto;
-    max-height: 65vh;
+    max-height: 75vh;
 }
 hr {
     height: 2px;

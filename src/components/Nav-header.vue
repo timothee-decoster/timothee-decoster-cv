@@ -17,6 +17,9 @@ export default {
 </script>
 
 <style scoped>
+#nav-header {
+    max-height: 200px;
+}
 #profile {
     width: 50%;
     border-radius: 50%;
