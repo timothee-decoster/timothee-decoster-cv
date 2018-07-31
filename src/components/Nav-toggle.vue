@@ -1,5 +1,5 @@
 <template>
-  <div id='nav-toggle'>
+  <div id='nav-toggle' v-bind:class="{ 'visible': hide, 'hidden': !hide }">
     <button @click="showNav()">{{ msg }}</button>
   </div>
 </template>
@@ -9,12 +9,18 @@ export default {
     name: 'Nav-toggle',
     data() {
         return {
-            msg: 'Naviguation'
+            msg: '->',
+            hide: false
         };
     },
     methods: {
         showNav() {
-            console.log('send');
+            this.hide = !this.hide;
+            if (this.msg === '->') {
+                this.msg = '<-';
+            } else {
+                this.msg = '->';
+            }
             this.$parent.$emit('toggleNav');
         }
     }
@@ -22,19 +28,27 @@ export default {
 </script>
 
 <style scoped>
-#nav-toggle {
+.hidden {
     margin-left: 300px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    visibility: hidden;
+}
+.visible {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 @media only all and (max-width: 59.938em) {
-    #nav-toggle {
+    .hidden,
+    .visible {
         margin-left: 230px;
     }
 }
 @media only all and (max-width: 47.938em) {
-    #nav-toggle {
+    .hidden {
+        visibility: visible;
         margin-left: 0;
         width: 100%;
     }

@@ -1,5 +1,5 @@
 <template>
-  <div id='nav'>
+  <div id='nav' v-bind:class="{ 'visible': hide, 'hidden': !hide }">
     <NavHeader/>
     <hr/>
     <section id='nav-section'>
@@ -41,8 +41,6 @@ export default {
     },
     mounted() {
         this.$parent.$on('toggleNav', () => {
-            console.log('received');
-            console.log(`${this.hide} -> ${!this.hide}`)
             this.hide = !this.hide;
         });
     }
@@ -50,7 +48,8 @@ export default {
 </script>
 
 <style scoped>
-#nav {
+.hidden,
+.visible {
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -66,7 +65,7 @@ export default {
 #nav-section {
     position: relative;
     overflow: auto;
-    max-height: 75vh;
+    max-height: 50vh;
 }
 hr {
     height: 2px;
@@ -79,7 +78,7 @@ h1 {
     color: beige;
 }
 @media only all and (max-width: 59.938em) {
-    #nav {
+    .hidden {
         width: 230px;
     }
     hr {
@@ -87,9 +86,12 @@ h1 {
     }
 }
 @media only all and (max-width: 47.938em) {
-    #nav {
+    .hidden {
         width: 230px;
         left: -230px;
+    }
+    .visible {
+        width: 230px;
     }
 }
 

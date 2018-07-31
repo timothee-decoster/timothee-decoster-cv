@@ -1,8 +1,6 @@
 <template>
-  <div id="body">
-    <Header/>
-    <hr/>
-    <img src="../assets/logo.png">
+  <div id="body" v-bind:class="{ 'visible': hide, 'hidden': !hide }">
+    <img src="../assets/vue-logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -42,28 +40,27 @@
 </template>
 
 <script>
-import Header from './Header';
-
 export default {
     name: 'Body',
-    components: {
-        Header
-    },
     data() {
         return {
             msg: 'Welcome to Your Vue.js App',
-            msg2: 'Navigation'
+            hide: false
         };
+    },
+    mounted() {
+        this.$parent.$on('toggleNav', () => {
+            this.hide = !this.hide;
+        });
     }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#body {
+.hidden {
     position: relative;
     margin-left: 300px;
-    min-height: 100%;
 }
 h1,
 h2 {
@@ -87,13 +84,18 @@ hr {
     border: none;
 }
 @media only all and (max-width: 59.938em) {
-    #body {
+    .hidden, visible {
         margin-left: 230px;
     }
 }
 @media only all and (max-width: 47.938em) {
-    #body {
+    .hidden {
         margin-left: 0;
+        width: 100%;
+    }
+    .visible {
+        position: fixed;
+        margin-left: 230px;
         width: 100%;
     }
 }
