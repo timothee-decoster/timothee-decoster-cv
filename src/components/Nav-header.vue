@@ -1,7 +1,7 @@
 <template>
   <div id='nav-header'>
     <img src="../assets/profile.jpg" id="profile">
-    <h1>{{ msg }}</h1>
+    <font color="beige" size="5">{{ msg }}</font>
   </div>
 </template>
 
@@ -18,13 +18,15 @@ export default {
 
 <style scoped>
 #nav-header {
-    max-height: 200px;
+    display: flex;
+    flex-grow: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
 }
 #profile {
     width: 50%;
     border-radius: 50%;
-}
-h1 {
-    color: beige;
 }
 </style>
