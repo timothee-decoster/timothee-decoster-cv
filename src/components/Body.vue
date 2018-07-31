@@ -96,7 +96,7 @@ hr {
         width: 100%;
     }
     .visible {
-        position: fixed;
+        position: inherit;
         margin-left: 230px;
         width: 100%;
     }
