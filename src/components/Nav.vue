@@ -2,22 +2,10 @@
   <div id='nav' v-bind:class="{ 'visible': hide, 'hidden': !hide }">
     <NavHeader/>
     <hr/>
-    <section id='nav-section'>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-        <h1>{{ msg }}</h1>
-    </section>
+    <ul id='nav-section'>
+        <li v-for="(page, index) in pages" :key="index" @click="select(index)" 
+        v-bind:class="{'selected': index==pageIndex}">{{ page.page }}</li>
+    </ul>
     <hr/>
     <NavFooter/>
   </div>
@@ -35,9 +23,16 @@ export default {
     },
     data() {
         return {
-            msg: 'Side naviguation',
-            hide: false
+            pages: [{ page: 'One' }, { page: 'Two' }],
+            hide: false,
+            pageIndex: 0
         };
+    },
+    methods: {
+        select(index) {
+            this.pageIndex = index;
+            this.$parent.$emit(`page${index}`);
+        }
     },
     mounted() {
         this.$parent.$on('toggleNav', () => {
@@ -66,6 +61,8 @@ export default {
     position: relative;
     overflow: auto;
     max-height: 50vh;
+    padding: 0;
+    margin: 0;
 }
 hr {
     height: 2px;
@@ -74,8 +71,22 @@ hr {
     border: none;
     width: 300px;
 }
-h1 {
+li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 25px;
+    background-color: #297251;
     color: beige;
+    height: 50px;
+    padding: 0px 0px 0px 20px;
+    margin: 10px 0px 10px 0px;
+}
+li:hover {
+    background-color: #289162;
+}
+.selected {
+    background-color: #289162;
 }
 @media only all and (max-width: 59.938em) {
     .hidden {
