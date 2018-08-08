@@ -2,6 +2,11 @@ https://www.pierrefay.fr/formation-vuejs/d%C3%A9couverte-installation-tutoriel.h
 
 # Souvenir (ubuntu)
 
+# Netlify
+
+for *Build command*: **yarn run build**
+for Publish directory: **dist**
+
 # installation npm
 
 sudo apt-get update
