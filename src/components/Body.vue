@@ -1,35 +1,20 @@
 <template>
   <div id="body" v-bind:class="{ 'visible': hide, 'hidden': !hide }">
-    <One v-if="this.page === 0"/>
-    <Two v-if="this.page === 1"/>
+      <router-view></router-view>
   </div>
 </template>
 
 <script>
-import One from './pages/One';
-import Two from './pages/Two';
-
 export default {
     name: 'Body',
-    components: {
-        One,
-        Two
-    },
     data() {
         return {
-            hide: false,
-            page: 0
+            hide: false
         };
     },
     mounted() {
         this.$parent.$on('toggleNav', () => {
             this.hide = !this.hide;
-        });
-        this.$parent.$on('page0', () => {
-            this.page = 0;
-        });
-        this.$parent.$on('page1', () => {
-            this.page = 1;
         });
     }
 };

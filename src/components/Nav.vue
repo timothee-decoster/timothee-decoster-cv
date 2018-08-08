@@ -3,8 +3,7 @@
     <NavHeader/>
     <hr/>
     <ul id='nav-section'>
-        <li v-for="(page, index) in pages" :key="index" @click="select(index)" 
-        v-bind:class="{'selected': index==pageIndex}">{{ page.page }}</li>
+        <router-link v-for="(page, index) in pages" :key="index" :to="`${page.page}`" tag="li">{{ page.page }}</router-link>
     </ul>
     <hr/>
     <NavFooter/>
@@ -23,16 +22,9 @@ export default {
     },
     data() {
         return {
-            pages: [{ page: 'One' }, { page: 'Two' }],
-            hide: false,
-            pageIndex: 0
+            pages: [{page: '/'}, { page: '/one' }, { page: '/two' }],
+            hide: false
         };
-    },
-    methods: {
-        select(index) {
-            this.pageIndex = index;
-            this.$parent.$emit(`page${index}`);
-        }
     },
     mounted() {
         this.$parent.$on('toggleNav', () => {
@@ -83,9 +75,6 @@ li {
     margin: 10px 0px 10px 0px;
 }
 li:hover {
-    background-color: #289162;
-}
-.selected {
     background-color: #289162;
 }
 @media only all and (max-width: 59.938em) {

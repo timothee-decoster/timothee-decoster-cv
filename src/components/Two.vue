@@ -1,6 +1,6 @@
 <template>
   <div id="two">
-    <img src="../../assets/vue-logo.png">
+    <img src="@/assets/vue-logo.png">
     <h1>{{ msg }}</h1>
     <h2>Ecosystem</h2>
     <ul>
@@ -27,11 +27,6 @@ export default {
         return {
             msg: 'Welcome to Your Vue.js App'
         };
-    },
-    mounted() {
-        this.$parent.$on('toggleNav', () => {
-            this.hide = !this.hide;
-        });
     }
 };
 </script>
