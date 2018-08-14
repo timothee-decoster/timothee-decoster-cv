@@ -3,7 +3,7 @@
     <NavHeader/>
     <hr/>
     <ul id='nav-section'>
-        <router-link v-for="(page, index) in pages" :key="index" :to="`${page.page}`" tag="li">{{ page.page }}</router-link>
+        <router-link v-for="(page, index) in pages" :key="index" :to="`${page.page}`" tag="li">{{ page.name }}</router-link>
     </ul>
     <hr/>
     <NavFooter/>
@@ -22,7 +22,28 @@ export default {
     },
     data() {
         return {
-            pages: [{page: '/'}, { page: '/one' }, { page: '/two' }],
+            pages: [
+                {
+                    page: '/',
+                    name: 'Accueil'
+                },
+                {
+                    page: '/cursus',
+                    name: 'Cursus'
+                },
+                {
+                    page: '/experiences',
+                    name: 'Experiences'
+                },
+                {
+                    page: '/competences',
+                    name: 'Competences'
+                },
+                {
+                    page: '/loisirs',
+                    name: 'Loisirs'
+                }
+            ],
             hide: false
         };
     },

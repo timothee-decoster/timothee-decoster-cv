@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Summary from '@/components/Summary.vue'
-import One from '@/components/One.vue'
-import Two from '@/components/Two.vue'
+import Accueil from '@/components/Accueil.vue'
+import Cursus from '@/components/Cursus.vue'
+import Experiences from '@/components/Experiences.vue'
+import Competences from '@/components/Competences.vue'
+import Loisirs from '@/components/Loisirs.vue'
 
 Vue.use(Router)
 
@@ -10,18 +12,28 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Summary,
-      name: 'Summary'
+      component: Accueil,
+      name: 'Accueil'
     },
     {
-      path: '/one',
-      component: One,
-      name: 'One'
+      path: '/cursus',
+      component: Cursus,
+      name: 'Cursus'
     },
     {
-      path: '/two',
-      component: Two,
-      name: 'Two'
+      path: '/experiences',
+      component: Experiences,
+      name: 'Experiences'
+    },
+    {
+      path: '/competences',
+      component: Competences,
+      name: 'Competences'
+    },
+    {
+      path: '/loisirs',
+      component: Loisirs,
+      name: 'Loisirs'
     }
   ]
 })

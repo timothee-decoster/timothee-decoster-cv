@@ -1,16 +1,15 @@
 <template>
-  <div id="summary">
+  <div id="competences">
     <h1>{{ msg }}</h1>
-    <img src="@/assets/vue-logo.png">
   </div>
 </template>
 
 <script>
 export default {
-    name: 'Summary',
+    name: 'Competences',
     data() {
         return {
-            msg: 'Welcome'
+            msg: 'Competences'
         };
     }
 };
