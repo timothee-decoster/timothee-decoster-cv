@@ -1,7 +1,7 @@
 <template>
   <div id="summary">
     <h1>{{ msg }}</h1>
-    <img src="@/assets/vue-logo.png">
+    <a href="https://github.com/timothee-decoster/timothee-decoster-cv/raw/master/src/assets/timothee_decoster_cv.pdf" download>Télécharger mon CV</a>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
     name: 'Accueil',
     data() {
         return {
-            msg: 'Bienvenue'
+            msg: 'Accueil'
         };
     }
 };

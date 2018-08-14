@@ -1,6 +1,6 @@
 <template>
   <div id='nav-header'>
-    <img src="../assets/profile.jpg" id="profile">
+    <img src="@/assets/profile.jpg" id="profile">
     <font color="beige" size="5">{{ msg }}</font>
   </div>
 </template>
