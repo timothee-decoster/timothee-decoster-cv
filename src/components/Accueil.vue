@@ -2,8 +2,8 @@
     <div id="summary">
         <h1><b>Bienvenue !</b></h1>
         <div id="resume">
-            <p>Bienvenue sur mon curriculum vitae en ligne réalisé par mes soins.</p>
-            <p>Vous y trouverez naturellement mon CV dans sa totalité et vous avez la possibilité de le télécharger avec <a href="https://github.com/timothee-decoster/timothee-decoster-cv/raw/master/src/assets/timothee_decoster_cv.pdf" download>ce lien</a></p>
+            <p>Bienvenue sur mon curriculum vitae en ligne.</p>
+            <p>Vous y trouverez naturellement mon CV dans sa totalité et vous avez la possibilité de le télécharger avec <a href="https://github.com/timothee-decoster/timothee-decoster-cv/raw/master/src/assets/timothee_decoster_cv.pdf" download>ce lien</a>.</p>
         </div>
         <h2><b>Pour commencer...</b></h2>
         <div id="first-info">
