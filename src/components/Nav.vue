@@ -69,6 +69,7 @@ export default {
     left: 0;
     font-weight: 400;
     font-size: 15px;
+    transition: 0.9s;
 }
 #nav-section {
     position: relative;

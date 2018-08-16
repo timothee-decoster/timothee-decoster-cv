@@ -42,6 +42,10 @@ img {
     justify-content: flex-start;
     align-items: center;
 }
+.hidden,
+.visible {
+    transition: 0.9s;
+}
 @media only all and (max-width: 59.938em) {
     .hidden,
     .visible {

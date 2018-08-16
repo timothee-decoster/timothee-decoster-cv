@@ -25,6 +25,7 @@ export default {
 .visible {
     position: inherit;
     margin-left: 300px;
+    transition: 0.9s;
 }
 @media only all and (max-width: 59.938em) {
     .hidden,
