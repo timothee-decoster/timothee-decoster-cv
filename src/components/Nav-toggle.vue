@@ -1,7 +1,7 @@
 <template>
-  <div id='nav-toggle' v-bind:class="{ 'visible': hide, 'hidden': !hide }">
-    <button @click="showNav()">{{ msg }}</button>
-  </div>
+    <div id='nav-toggle' v-bind:class="{ 'visible': hide, 'hidden': !hide }">
+        <img src="@/assets/toggle.svg" alt="toggle naviguation" @click="showNav()">
+    </div>
 </template>
 
 <script>
@@ -9,7 +9,6 @@ export default {
     name: 'Nav-toggle',
     data() {
         return {
-            msg: '->',
             hide: false
         };
     },
@@ -28,6 +27,9 @@ export default {
 </script>
 
 <style scoped>
+img {
+    cursor: pointer;
+}
 .hidden {
     margin-left: 300px;
     display: flex;
