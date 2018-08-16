@@ -13,9 +13,9 @@ export default {
 <style scoped>
 h1 {
     font-weight: normal;
-    font-size: 5vh;
+    font-size: 50px;
 }
 p {
-    font-size: 3vh;
+    font-size: 25px;
 }
 </style>
