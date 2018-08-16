@@ -3,7 +3,12 @@
     <NavHeader/>
     <hr/>
     <ul id='nav-section'>
-        <router-link v-for="(page, index) in pages" :key="index" :to="`${page.page}`" tag="li">{{ page.name }}</router-link>
+        <router-link v-for="(page, index) in pages" :key="index" :to="`${page.page}`" tag="li">
+            <svg viewBox="0 0 20 20" class="icon">
+                <path d="M0 0 L10 10 L0 20"></path>
+            </svg>
+            {{ page.name }}
+        </router-link>
     </ul>
     <hr/>
     <NavFooter/>
@@ -85,6 +90,17 @@ hr {
     border: none;
     width: 300px;
 }
+.icon {
+    width: 1rem;
+    opacity: 0;
+    transition: all 0.2s;
+    transform: translateX(-100%);
+}
+.icon path {
+    stroke: #333;
+    stroke-width: 5px;
+    fill: none;
+}
 li {
     display: flex;
     justify-content: flex-start;
@@ -95,9 +111,14 @@ li {
     height: 50px;
     padding: 0px 0px 0px 20px;
     margin: 10px 0px 10px 0px;
+    cursor: pointer;
 }
 li:hover {
     background-color: #289162;
+}
+li:hover .icon {
+    opacity: 1;
+    transform: translateX(0);
 }
 @media only all and (max-width: 59.938em) {
     .hidden {
